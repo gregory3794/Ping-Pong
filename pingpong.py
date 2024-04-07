@@ -36,9 +36,9 @@ finish =False
 clock = time.Clock()
 FPS = 60
 
-racket1 = Player('racket.png',30,200,4,50,150)
-racket2 = Player('racket.png',520,200,4,50,150)
-ball = GameSprite('tenis_ball.png',200,200,4,50,50)
+racket1 = Player('racket2.png',30,200,4,50,150)
+racket2 = Player('racket2.png',520,200,4,50,150)
+ball = GameSprite('ball.png',200,200,4,50,50)
 
 font.init()
 font = font.Font(None,35)
@@ -47,6 +47,10 @@ lose2 = font.render('PLAYER 2 LOSE!',True,(180,0,0))
 
 speed_x = 3
 speed_y = 3
+if FPS < 60 and FPS > 50:
+    speed_x = 6
+    speed_y = 6
+
 
 while game:
     for e in event.get():
